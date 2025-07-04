@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Template de Chamados</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+</head>
+<body class="dark">
+    <div class="container">
+        <h1>Template de Chamados</h1>
+
+        <section class="form-section">
+            <h2>Dados do Usuário</h2>
+            <div class="grid">
+                <div class="input-group"><i class="mdi mdi-account"></i><input type="text" id="nome" placeholder="Nome do usuário" /></div>
+                <div class="input-group"><i class="mdi mdi-phone"></i><input type="tel" id="telefone" placeholder="Telefone" /></div>
+                <div class="input-group"><i class="mdi mdi-email"></i><input type="email" id="email" placeholder="E-mail" /></div>
+                <div class="input-group"><i class="mdi mdi-office-building"></i><input type="text" id="investida" placeholder="Investida" /></div>
+                <div class="input-group"><i class="mdi mdi-clock"></i><input type="text" id="horario" placeholder="Horário" /></div>
+                <div class="input-group"><i class="mdi mdi-map-marker"></i><input type="text" id="localizacao" placeholder="Localização (endereço, prédio, andar)" /></div>
+                <div class="input-group"><i class="mdi mdi-desktop-classic"></i><input type="text" id="hostname" placeholder="Hostname" /></div>
+                <div class="input-group wide">
+                    <i class="mdi mdi-clipboard-text-outline"></i>
+                    <textarea id="notasPessoais" placeholder="Notas pessoais sobre o chamado (para seu uso, não gerado em templates)" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn azul" id="gerar"><i class="mdi mdi-file-document-outline"></i> Gerar Template</button>
+                <button class="btn vermelho" id="limpar"><i class="mdi mdi-trash-can-outline"></i> Limpar Campos</button>
+            </div>
+        </section>
+
+        <section class="template-section">
+            <h2>Template Gerado</h2>
+            <textarea id="template" placeholder="Seu template aparecerá aqui..." readonly></textarea>
+            <button class="btn cinza" id="copiarTemplateGerado"><i class="mdi mdi-content-copy"></i> Copiar Template</button>
+        </section>
+
+        <section class="saved-section">
+            <div class="accordion-header" id="gerenciarTemplatesHeader">
+                <h2>Gerenciar Templates</h2>
+                <i class="mdi mdi-chevron-down"></i>
+            </div>
+            <div class="accordion-content" id="gerenciarTemplatesContent">
+                <div class="input-group wide">
+                    <i class="mdi mdi-file-document-outline"></i>
+                    <input type="text" id="nomeTemplate" placeholder="Nome do template para salvar ou carregar" />
+                </div>
+
+                <button class="btn azul" id="salvarNomeado"><i class="mdi mdi-content-save"></i> Salvar Template com Nome</button>
+
+                <div class="saved-controls">
+                    <select id="templateSelecionado" size="6" aria-label="Lista de templates salvos"></select>
+                    <div class="buttons-vertical">
+                        <button class="btn cinza" id="editarNomeTemplate" title="Editar nome do template selecionado"><i class="mdi mdi-pencil"></i></button>
+                        <button class="btn vermelho" id="excluirTemplate" title="Excluir template selecionado"><i class="mdi mdi-delete"></i></button>
+                        <button class="btn azul" id="carregarTemplate" title="Carregar template selecionado"><i class="mdi mdi-download"></i></button>
+                        <button class="btn cinza" id="limparLista" title="Limpar seleção"><i class="mdi mdi-close-circle"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Desenvolvido por <strong>Pedro Milan</strong></p>
+    </footer>
+</body>
+</html>
